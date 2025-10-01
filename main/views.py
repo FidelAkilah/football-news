@@ -18,8 +18,8 @@ from django.utils.html import strip_tags
 @csrf_exempt
 @require_POST
 def add_news_entry_ajax(request):
-    title = stip_tags(request.POST.get("title")) # strip HTML tags for security
-    content = strip_tags(request.POST.get("content")) # strip HTML tags for security
+    title = strip_tags(request.POST.get("title")) # strip HTML tags!
+    content = strip_tags(request.POST.get("content"))
     category = request.POST.get("category")
     thumbnail = request.POST.get("thumbnail")
     is_featured = request.POST.get("is_featured") == 'on'  # checkbox handling
