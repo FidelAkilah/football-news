@@ -49,6 +49,11 @@
     <p class="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-4">
       {{ news.content|truncatewords:20 }}
     </p>
+    <button
+      onclick="showToast('Sample Title', 'This is a sample message for the toast notification.')"
+    >
+      Click to Show Toast
+    </button>
 
     <!-- Action Buttons -->
     {% if user.is_authenticated and news.user == user %}
